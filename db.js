@@ -1,11 +1,13 @@
 const Pool = require('pg').Pool;
 
-const pool = new Client({
-  user: "",
-  password: "",
-  host: "localhost",
-  port: 5432,
-  database: "better-jeopardy"
-});
+const config = {
+    user: '',
+    database: 'better-jeopardy',
+    host: 'localhost',
+    password: '',
+    port: 5432
+};
+
+const pool = new Pool(config);
 
 module.exports = pool;
