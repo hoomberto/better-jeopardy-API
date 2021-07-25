@@ -1,7 +1,13 @@
 const express = require('express')
+// require('dotenv').config()
 const app = express();
 const cors = require('cors')
-const pool = require('./db')
+// const pool = require('./db')
+
+// const isProduction = process.env.NODE_ENV === 'production'
+// const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`
+
+const { pool } = require('./config')
 
 app.use(cors());
 app.use(express.json());
@@ -54,6 +60,10 @@ app.post('/past-games', (request, response) => {
 });
 
 
-app.listen(3001, () => {
-  console.log(`${app.locals.title} has started on port 3001`)
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Server listening`)
 })
+//
+// app.listen(3001, () => {
+//   console.log(`${app.locals.title} has started on port 3001`)
+// })
