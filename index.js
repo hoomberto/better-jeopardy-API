@@ -15,7 +15,7 @@ app.get('/', (request, response) => {
 
 app.get('/questions', (request, response) => {
   let questions;
-  pool.query('SELECT * FROM question', (err, res) => {
+  pool.query('SELECT * FROM questions', (err, res) => {
     if (err) {
       console.log(err)
     }
