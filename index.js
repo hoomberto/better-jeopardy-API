@@ -10,13 +10,12 @@ app.locals.title = 'Better Jeopardy API';
 pool.connect();
 
 app.get('/', (request, response) => {
-  response.status(200).send('Welcome to the BetterJeopardy API')
+  response.status(200).send(`Welcome to the ${app.locals.title}`)
 });
 
 app.get('/questions', (request, response) => {
   let questions;
   pool.query('SELECT * FROM question', (err, res) => {
-    // console.log(res)
     if (err) {
       console.log(err)
     }
@@ -26,5 +25,5 @@ app.get('/questions', (request, response) => {
 });
 
 app.listen(3001, () => {
-  console.log(`${app.local.title} has started on port 3001`)
+  console.log(`${app.locals.title} has started on port 3001`)
 })
