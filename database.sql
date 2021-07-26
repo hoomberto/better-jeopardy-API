@@ -6,13 +6,10 @@ CREATE TABLE questions(
     correct_answer text NOT NULL,
     incorrect_answers json NOT NULL,
     prize INT NOT NULL,
-    show_number INT NOT NULL, 
+    show_number INT NOT NULL,
     air_date text NOT NULL,
     category text NOT NULL
 );
-
-
-create table jsontest (id serial primary key, data json)
 
 CREATE TABLE pastGames(
     game_id SERIAL PRIMARY KEY,
@@ -21,19 +18,9 @@ CREATE TABLE pastGames(
     score INT NOT NULL
 );
 
-
-
-CREATE TABLE categories(
-    category_id SERIAL PRIMARY KEY,
-    name text NOT NULL
-);
-
-
 INSERT INTO questions (question_id, question, correct_answer, incorrect_answers, prize, show_number, air_date, category)
-VALUES (1, 'The T-bar, the chair & the gondola are 3 types of these devices that transport skiers', 'Lift', '["Conveyors", "Carriers", "Hitches"]', 100, 1739, '03/05/1992', 'Skiing');
-
-INSERT INTO questions (question_id, question, correct_answer, incorrect_answers, prize, show_number, air_date, category)
-VALUES (2, 'Skiers wear these in part to reduce glare & prevent eyestrain', 'Sunglasses', '["Hat", "Headphones", "Contacts"]', 200, 1739, '03/05/1992', 'Skiing'), 
+VALUES (1, 'The T-bar, the chair & the gondola are 3 types of these devices that transport skiers', 'Lift', '["Conveyors", "Carriers", "Hitches"]', 100, 1739, '03/05/1992', 'Skiing'),
+(2, 'Skiers wear these in part to reduce glare & prevent eyestrain', 'Sunglasses', '["Hat", "Headphones", "Contacts"]', 200, 1739, '03/05/1992', 'Skiing'),
 (3, '"Cosmetic" name of the light, dry snow that is ideal for skiing', 'Powder', '["Spray", "Mist", "Debris"]', 300, 1739, '03/05/1992', 'Skiing'),
 (4, 'In the snowplow method of stopping, a skier brings the tips of their skis together to form this letter', 'V', '["L", "W", "X"]', 400, 1739, '03/05/1992', 'Skiing'),
 (5, 'The most basic movement in this type of skiing is the diagonal stride', 'Cross Country Skiing', '["Downhill Skiing", "Alpine Rouring", "Freestyle Skiing"]', 500, 1739, '03/05/1992', 'Skiing'),
@@ -56,6 +43,7 @@ VALUES (2, 'Skiers wear these in part to reduce glare & prevent eyestrain', 'Sun
 (22, 'It''s the practical lesson about right & wrong that results from an instructive story like a fable', 'Moral' , '["Theme", "Lesson", "Parable"]', 200, 8206, '04/20/2020', 'Literary Terms'),
 (23, 'From Greek words for "first" & "actor", it''s the main character in a story', 'Protagonist' , '["Thespian", "Truant", "Antagonist"]', 300, 8206, '04/20/2020', 'Literary Terms'),
 (24, 'The 6-line "Scottish stanza" is also known by the name of this 18th century poet', 'Burns' , '["Haiku", "Monologue", "Verse"]', 400, 8206, '04/20/2020', 'Literary Terms'),
+
 (25, 'This 5-letter word for a figure of speech is widely used to mean any familiar reference', 'Trope', '["Story", "Irony", "Fable"]', 500, 8206, '04/20/2020', 'Literary Terms'),
 
 INSERT INTO questions (question_id, question, correct_answer, incorrect_answers, prize, show_number, air_date, category)
@@ -64,10 +52,4 @@ VALUES (26, 'Tomahawk, hatchet', 'Ax', '["Story", "Irony", "Fable"]', 100, 8269,
 (28, 'Compound, recurve', 'Bow', '["Handgun", "Sniper Rifle", "Torpedo"]', 300, 8269, '10/29/2020', 'Weapon Types'), 
 (29, 'Bolt action: AR, also called modern sporting', 'Rifle', '["Light Machine Gun", "Bow", "Shotgun"]', 400, 8269, '10/29/2020', 'Weapon Types'), 
 (30, 'Cudgel, shillelagh', 'Club', '["Rocket", "Grenade", "Sub Machine Gun"]', 500, 8269, '10/29/2020', 'Weapon Types');
-
-
-
-
-
-
 
