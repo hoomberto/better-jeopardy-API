@@ -22,8 +22,10 @@ app.get('/', (request, response) => {
 app.get('/questions', (request, response) => {
   let questions;
   pool.query('SELECT * FROM questions', (err, res) => {
+    console.log(res);
     if (err) {
       console.log(err)
+      return err;
     }
     questions = res.rows;
     response.status(200).send({questions})
@@ -35,6 +37,7 @@ app.get('/past-games', (request, response) => {
   pool.query('SELECT * FROM pastGames', (err, res) => {
     if (err) {
       console.log(err)
+      return err;
     }
     pastGames = res.rows;
     response.status(200).send({pastGames})
@@ -54,6 +57,7 @@ app.post('/past-games', (request, response) => {
     (err, res) => {
       if (err) {
         console.log(err)
+        return err;
       }
     response.status(201).json({status: 'success', message: 'Game added.'})
   })
