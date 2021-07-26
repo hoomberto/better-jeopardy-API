@@ -8,7 +8,10 @@ const connectionString = `postgres://xvkpuofcnndyjr:c3dc401551f597335bd3115c401a
 
 const pool = new Pool({
   connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
-  ssl: isProduction,
+  ssl: {
+    sslmode: 'require',
+    rejectUnauthorized: false,
+  }
 })
 
 module.exports = {pool};
