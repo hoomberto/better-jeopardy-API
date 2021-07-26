@@ -43,4 +43,13 @@ VALUES (1, 'The T-bar, the chair & the gondola are 3 types of these devices that
 (22, 'It''s the practical lesson about right & wrong that results from an instructive story like a fable', 'Moral' , '["Theme", "Lesson", "Parable"]', 200, 8206, '04/20/2020', 'Literary Terms'),
 (23, 'From Greek words for "first" & "actor", it''s the main character in a story', 'Protagonist' , '["Thespian", "Truant", "Antagonist"]', 300, 8206, '04/20/2020', 'Literary Terms'),
 (24, 'The 6-line "Scottish stanza" is also known by the name of this 18th century poet', 'Burns' , '["Haiku", "Monologue", "Verse"]', 400, 8206, '04/20/2020', 'Literary Terms'),
-(25, 'This 5-letter word for a figure of speech is widely used to mean any familiar reference', 'Trope', '["Story", "Irony", "Fable"]', 500, 8206, '04/20/2020', 'Literary Terms');
+
+(25, 'This 5-letter word for a figure of speech is widely used to mean any familiar reference', 'Trope', '["Story", "Irony", "Fable"]', 500, 8206, '04/20/2020', 'Literary Terms'),
+
+INSERT INTO questions (question_id, question, correct_answer, incorrect_answers, prize, show_number, air_date, category)
+VALUES (26, 'Tomahawk, hatchet', 'Ax', '["Story", "Irony", "Fable"]', 100, 8269, '10/29/2020', 'Weapon Types'), 
+(27, 'Cutlass, falchion', 'Sword', '["Spear", "Missile", "Flamethrower"]', 200, 8269, '10/29/2020', 'Weapon Types'), 
+(28, 'Compound, recurve', 'Bow', '["Handgun", "Sniper Rifle", "Torpedo"]', 300, 8269, '10/29/2020', 'Weapon Types'), 
+(29, 'Bolt action: AR, also called modern sporting', 'Rifle', '["Light Machine Gun", "Bow", "Shotgun"]', 400, 8269, '10/29/2020', 'Weapon Types'), 
+(30, 'Cudgel, shillelagh', 'Club', '["Rocket", "Grenade", "Sub Machine Gun"]', 500, 8269, '10/29/2020', 'Weapon Types');
+
