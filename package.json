@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node index.js"
+    "start": "node index.js"
   },
   "author": "Bobby Vasquez, Dean Cook, Shawn McMahon",
   "license": "ISC",
@@ -13,9 +13,10 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "pg": "^8.6.0"
+    "pg": "^8.6.0",
+    "postgresql": "^0.0.1"
   },
-  "devDependencies": {
+  "optionalDependencies": {
     "nodemon": "^2.0.12"
   }
 }
