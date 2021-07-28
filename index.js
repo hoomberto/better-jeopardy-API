@@ -63,7 +63,6 @@ app.get('api/v1/past-games', (request, response) => {
 
 
 app.post('api/v1/past-games', (request, response) => {
-
   let pastGame = request.body;
 
   pastGame.id = Math.floor(100000 + Math.random() * 900000)
@@ -74,7 +73,7 @@ app.post('api/v1/past-games', (request, response) => {
     (err, res) => {
       if (err) {
         console.log(err)
-        return err;
+        return response.status(422)
       }
     response.status(201).json({status: 'success', message: 'Game added.'})
   })
