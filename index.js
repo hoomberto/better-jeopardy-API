@@ -13,13 +13,14 @@ app.use(cors());
 app.use(express.json());
 
 app.locals.title = 'Better Jeopardy API';
+// app.locals.questions = pool.query
 pool.connect();
 
 app.get('/', (request, response) => {
   response.status(200).send(`Welcome to the ${app.locals.title}`)
 });
 
-app.get('/questions', (request, response) => {
+app.get('api/v1/questions', (request, response) => {
   let questions;
   pool.query('SELECT * FROM questions', (err, res) => {
     console.log(res);
@@ -32,7 +33,23 @@ app.get('/questions', (request, response) => {
   })
 });
 
-app.get('/past-games', (request, response) => {
+app.get('api/v1/questions/:id', (request, response) => {
+  const { id } = request.params;
+
+  let questions;
+  pool.query('SELECT * FROM questions', (err, res) => {
+    if (err) {
+      console.log(err)
+      return err;
+    }
+    questions = res.rows;
+    const match = questions.find(question => question.question_id == id);
+    if (!match) return response.status(404).json({message: `No idea found with an id of ${id}`});
+    return response.status(200).json(match);
+  })
+});
+
+app.get('api/v1/past-games', (request, response) => {
   let pastGames;
   pool.query('SELECT * FROM pastGames', (err, res) => {
     if (err) {
@@ -45,7 +62,7 @@ app.get('/past-games', (request, response) => {
 });
 
 
-app.post('/past-games', (request, response) => {
+app.post('api/v1/past-games', (request, response) => {
 
   let pastGame = request.body;
 
