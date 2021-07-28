@@ -20,7 +20,7 @@ app.get('/', (request, response) => {
   response.status(200).send(`Welcome to the ${app.locals.title}`)
 });
 
-app.get('api/v1/questions', (request, response) => {
+app.get('/api/v1/questions', (request, response) => {
   let questions;
   pool.query('SELECT * FROM questions', (err, res) => {
     console.log(res);
@@ -33,7 +33,7 @@ app.get('api/v1/questions', (request, response) => {
   })
 });
 
-app.get('api/v1/questions/:id', (request, response) => {
+app.get('/api/v1/questions/:id', (request, response) => {
   const { id } = request.params;
 
   let questions;
@@ -49,7 +49,7 @@ app.get('api/v1/questions/:id', (request, response) => {
   })
 });
 
-app.get('api/v1/past-games', (request, response) => {
+app.get('/api/v1/past-games', (request, response) => {
   let pastGames;
   pool.query('SELECT * FROM pastGames', (err, res) => {
     if (err) {
@@ -62,11 +62,10 @@ app.get('api/v1/past-games', (request, response) => {
 });
 
 
-app.post('api/v1/past-games', (request, response) => {
+app.post('/api/v1/past-games', (request, response) => {
   let pastGame = request.body;
 
   pastGame.id = Math.floor(100000 + Math.random() * 900000)
-
   pool.query(
     'INSERT INTO pastGames (game_id, questions, date, score) VALUES ($1, $2, $3, $4)',
     [pastGame.id, JSON.stringify(pastGame.questions), pastGame.date, pastGame.score],
