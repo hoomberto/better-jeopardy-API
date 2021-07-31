@@ -2,6 +2,7 @@ const express = require('express')
 // require('dotenv').config()
 const app = express();
 const cors = require('cors')
+
 // const pool = require('./db')
 
 // const isProduction = process.env.NODE_ENV === 'production'
@@ -9,8 +10,10 @@ const cors = require('cors')
 
 const { pool } = require('./config')
 
-app.use(cors());
 app.use(express.json());
+app.use(cors({
+    origin: 'https://better-jeopardy.herokuapp.com/'
+}));
 
 app.locals.title = 'Better Jeopardy API';
 // app.locals.questions = pool.query
