@@ -77,6 +77,7 @@ app.post('/api/v1/past-games', (request, response) => {
         console.log(err)
         return response.status(422)
       }
+    response.append('Access-Control-Allow-Origin', '*');
     response.status(201).json({status: 'success', message: 'Game added.'})
   })
 });
