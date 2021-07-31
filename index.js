@@ -12,7 +12,7 @@ const { pool } = require('./config')
 
 app.use(express.json());
 app.use(cors({
-    origin: 'https://better-jeopardy.herokuapp.com/'
+    origin: '*'
 }));
 
 app.locals.title = 'Better Jeopardy API';
