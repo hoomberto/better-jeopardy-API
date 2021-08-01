@@ -62,6 +62,22 @@ app.get('/api/v1/past-games', (request, response) => {
   })
 });
 
+app.get('/api/v1/past-games/:id', (request, response) => {
+  const { id } = request.params;
+
+  let past;
+  pool.query('SELECT * FROM pastGames', (err, res) => {
+    if (err) {
+      console.log(err)
+      return err;
+    }
+    past = res.rows;
+    const match = past.find(game => game.game_id == id);
+    if (!match) return response.status(404).json({message: `No idea found with an id of ${id}`});
+    return response.status(200).json(match);
+  })
+});
+
 
 app.post('/api/v1/past-games', (request, response) => {
   let pastGame = request.body;
