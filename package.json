@@ -1,5 +1,5 @@
 {
-  "name": "Better-Jeopardy-API",
+  "name": "better-jeopardy-api",
   "version": "1.0.0",
   "description": "Eventually open-source!",
   "main": "index.js",
@@ -18,5 +18,15 @@
   },
   "optionalDependencies": {
     "nodemon": "^2.0.12"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoomberto/better-jeopardy-API-v2.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/hoomberto/better-jeopardy-API-v2/issues"
+  },
+  "homepage": "https://github.com/hoomberto/better-jeopardy-API-v2#readme"
 }

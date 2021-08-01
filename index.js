@@ -11,9 +11,7 @@ const cors = require('cors')
 const { pool } = require('./config')
 
 app.use(express.json());
-app.use(cors({
-    origin: '*'
-}));
+app.use(cors());
 
 app.locals.title = 'Better Jeopardy API';
 // app.locals.questions = pool.query
@@ -82,7 +80,7 @@ app.post('/api/v1/past-games', (request, response) => {
 });
 
 
-app.listen(process.env.PORT || 3001, () => {
+app.listen(process.env.PORT || 3006, () => {
   console.log(`Server listening`)
 })
 //
