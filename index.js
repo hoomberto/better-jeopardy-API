@@ -72,8 +72,8 @@ app.post('/api/v1/past-games', (request, response) => {
       console.log(err)
       return err;
     }
-    allPastGames = res.rows.pastGames;
-    pastGame.id = allPastGames.length + 1
+    // allPastGames = res.rows.length;
+    pastGame.id = res.rows.length + 1
     pool.query(
       'INSERT INTO pastGames (game_id, questions, date, name, score) VALUES ($1, $2, $3, $4, $5)',
       [pastGame.id, JSON.stringify(pastGame.questions), pastGame.date, pastGame.name, pastGame.score],
