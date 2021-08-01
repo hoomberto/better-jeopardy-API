@@ -70,8 +70,8 @@ app.post('/api/v1/past-games', (request, response) => {
 
   pastGame.id = Math.floor(100000 + Math.random() * 900000)
   pool.query(
-    'INSERT INTO pastGames (game_id, questions, date, score) VALUES ($1, $2, $3, $4)',
-    [pastGame.id, JSON.stringify(pastGame.questions), pastGame.date, pastGame.score],
+    'INSERT INTO pastGames (game_id, questions, date, score) VALUES ($1, $2, $3, $4, $5)',
+    [pastGame.id, JSON.stringify(pastGame.questions), pastGame.date, pastGame.name, pastGame.score],
     (err, res) => {
       if (err) {
         console.log(err)
