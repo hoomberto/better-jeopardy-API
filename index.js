@@ -66,17 +66,37 @@ app.get('/api/v1/past-games', (request, response) => {
 app.post('/api/v1/past-games', (request, response) => {
   let pastGame = request.body;
 
-  pastGame.id = Math.floor(100000 + Math.random() * 900000)
-  pool.query(
-    'INSERT INTO pastGames (game_id, questions, date, score) VALUES ($1, $2, $3, $4, $5)',
-    [pastGame.id, JSON.stringify(pastGame.questions), pastGame.date, pastGame.name, pastGame.score],
-    (err, res) => {
-      if (err) {
-        console.log(err)
-        return response.status(422)
-      }
-    response.status(201).json({status: 'success', message: 'Game added.'})
+  let allPastGames;
+  pool.query('SELECT * FROM pastGames', (err, res) => {
+    if (err) {
+      console.log(err)
+      return err;
+    }
+    allPastGames = res.rows.pastGames;
+    pastGame.id = allPastGames.length + 1
+    pool.query(
+      'INSERT INTO pastGames (game_id, questions, date, name, score) VALUES ($1, $2, $3, $4, $5)',
+      [pastGame.id, JSON.stringify(pastGame.questions), pastGame.date, pastGame.name, pastGame.score],
+      (err, res) => {
+        if (err) {
+          console.log(err)
+          return response.status(422)
+        }
+      response.status(201).json({status: 'success', message: 'Game added.'})
+    })
   })
+
+  // pastGame.id = allPastGames.length + 1
+  // pool.query(
+  //   'INSERT INTO pastGames (game_id, questions, date, name, score) VALUES ($1, $2, $3, $4, $5)',
+  //   [pastGame.id, JSON.stringify(pastGame.questions), pastGame.date, pastGame.name, pastGame.score],
+  //   (err, res) => {
+  //     if (err) {
+  //       console.log(err)
+  //       return response.status(422)
+  //     }
+  //   response.status(201).json({status: 'success', message: 'Game added.'})
+  // })
 });
 
 
