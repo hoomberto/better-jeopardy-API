@@ -10,7 +10,8 @@ The Better Jeopardy API is an API of Jeopardy trivia questions in multiple-choic
 
  - `/api/v1/past-games` -- to view past game data posted to the API
  - `/api/v1/questions` -- to view all of the trivia question objects in our API
- - `/api/v1/questions/:[question-id]` -- input the id of a question to view just that single question object
+ - `/api/v1/questions/:[question_id]` -- input the id of a question to view just that single question object
+ - `/api/v1/past-games/:[game_id]` -- input the id of a past game to view just that single past game object
 
 [Project Rubric](https://frontend.turing.edu/projects/module-3/stretch.html)
 
