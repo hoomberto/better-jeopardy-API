@@ -15,14 +15,6 @@ The Better Jeopardy API is an API of Jeopardy trivia questions in multiple-choic
 
 [Project Rubric](https://frontend.turing.edu/projects/module-3/stretch.html)
 
-## Contributors
-
-[Bobby](https://github.com/hoomberto)
-
-[Shawn](https://github.com/shawnmcmahon)
-
-[Dean](https://github.com/novaraptur)
-
 ## Future Extensions
 
  - [ ] Flesh out the back-end database will all Jeopardy questions in multiple-choice format
@@ -33,3 +25,30 @@ The Better Jeopardy API is an API of Jeopardy trivia questions in multiple-choic
  - PostgresQL
  - Express
  - Heroku
+
+## Contributors
+<table>
+     <tr>
+          <td> Dean Cook <a href="https://github.com/novaraptur">GH</td>
+    </tr>
+    </tr>
+ <td><img src="https://avatars.githubusercontent.com/u/70540855?v=4" alt="Dean GH img"
+width="150" height="auto" /></td>
+     <tr>
+          <td> Shawn McMahon <a href="https://github.com/shawnmcmahon">GH</td>
+      </tr>
+      </tr>
+<td><img src="https://avatars.githubusercontent.com/u/73731359?v=4" alt="Shawn GH img"
+width="150" height="auto" /></td>
+    </tr>
+     <tr>
+        <td> Bobby Vasquez <a href="https://github.com/hoomberto">GH</td>
+    </tr>
+    </tr>
+    <td><img src="https://avatars.githubusercontent.com/u/78388491?v=4" alt="Bobby GH img"
+ width="150" height="auto" /></td>
+</table>
+
+**************************************************************************
+###### This project was created for [Turing School of Software and Design](https://turing.io/)
+###### 2021/08/02
