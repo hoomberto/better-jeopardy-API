@@ -73,6 +73,7 @@ width="150" height="auto" /></td>
     <td><img src="https://avatars.githubusercontent.com/u/78388491?v=4" alt="Bobby GH img"
  width="150" height="auto" /></td>
 </table>
+
 **************************************************************************
 ###### This project was created for [Turing School of Software and Design](https://turing.io/)
 ###### 2021/08/02
